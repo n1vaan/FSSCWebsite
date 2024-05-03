@@ -1,1 +1,1 @@
-FSSC Website Beta
+FSSC Website Beta, made before ChatGPT existed! 
