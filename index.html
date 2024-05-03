@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+     <title>Future Stars</title>
+     <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+</head>
+        <body>
+    
+            <div id="SLIDE_BG">
+
+                <nav id="navbar" class="navbar">
+                    <a href="index.html" id="logo" ><img src="images/logo.png"></a>
+                    <div class="nav-links" id="navLinks">
+                        <i class="fa fa-times" onclick="hideMenu()"></i>
+                            <ul id="links">
+                                <li><a href="">HOME</a></li>
+                                <li><a href="">ABOUT</a></li>
+                                <li><a href="">TRAINING</a></li>
+                                <li><a href="">CONTACT</a></li>
+                                <li><a href="">COACHES</a></li> 
+                                <li><a href="">GALLERY</a></li> 
+                            </ul>
+
+                     </div>
+
+                     <i class="fa fa-bars" onclick="showMenu()"></i>
+
+                </nav>
+            <div class="text-box">
+                <h1>Future Stars School of Cricket</h1>
+                <p>The best cricket academy in Virginia.</p>
+                <a href="" class="hero-btn">Contact us Now</a>
+            </div>
+
+            <div class="slider">
+              <div class="slide current">
+                <div class="content">
+
+                </div>
+              </div>
+              <div class="slide">
+                <div class="content">
+                </div>
+              </div>
+              <div class="slide">
+                <div class="content">
+
+                </div>
+              </div>
+              <div class="slide">
+                <div class="content">
+
+                </div>
+              </div>
+              <div class="slide">
+                <div class="content">
+
+              </div>
+                </div>
+              <div class="slide">
+                <div class="content">
+
+                </div>
+              </div>
+            </div>
+            <div class="buttons">
+              <button id="prev">&lt;</button>
+              <button id="next">&gt;</button>
+            </div>
+
+            </div>
+            
+            
+            <section class="page2">
+                <article>
+                  <h1 class="maintext">Train Hard, Play Hard.</h1>
+                </article>
+            </section>
+
+         
+    
+    
+
+            <section class="page3">
+                
+                <div class="dimmedrapper">
+                    <div class="dimmed"></div>
+                </div>
+
+                <h2>Training Program</h2>
+                
+                
+                <div class="training js-scroll fade-in">
+                    <a href="#" class="fill-div"></a>
+                <h1>Group Sessions:</h1>
+                <ul1>
+                    <li>Monday-Saturday</li>
+                    <li>Ages 5 - 16</li>
+                    <li>All seasons (Indoor in winter)</li>
+                </ul1>
+                </div>
+                
+                
+                <div class="batting js-scroll fade-in">
+                    <a href="#" class="fill-div"></a>
+                <h3>Batting:</h3>
+                <ul2>
+                    <li>Develop Techinique</li>
+                    <li>Middling the Ball</li>
+                    <li>Multiple Situations</li>
+                </ul2>
+                </div>
+                
+                
+                 <div class="bowling js-scroll fade-in">
+                    <a href="#" class="fill-div"></a>
+                <h4>Bowling:</h4>
+                <ul3>
+                    <li>Spin and Pace Bowling</li>
+                    <li>Developing Line and Length</li>
+                    <li>Bowling Variation</li>
+                </ul3>
+                </div>
+                
+                
+                <div class="fielding js-scroll fade-in">
+                    <a href="#" class="fill-div"></a>
+                <h5>Fielding:</h5>
+                <ul4>
+                    <li>Catching the hard ball</li>
+                    <li>Ground Fielding</li>
+                    <li>Throwing the ball</li>
+                </ul4>
+                </div>
+
+
+            </section>
+
+
+    
+    
+<!------Javascript for toggle menu------>                      
+<script>
+    function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+}
+    var navLinks = document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+        
+        
+    }
+    
+
+//Navbar movement on scroll
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    document.getElementById("navbar").style.padding = ".05% .5%";
+    document.getElementById("navbar").style.opacity = .8;
+    document.getElementById("links").style.opacity = 1;
+    document.getElementById("logo").style.opacity = 1;
+    document.getElementById("navbar").style.borderRadius = "100px";
+
+  } 
+    
+    else {
+    document.getElementById("navbar").style.padding = ".9% .5%";
+    document.getElementById("img").style.width = "150px";
+    document.getElementById("navbar").style.opacity = 2;
+    document.getElementById("navbar").style.borderRadius = "65px";
+        
+    }
+
+}
+
+
+const slides = document.querySelectorAll('.slide');
+const next = document.querySelector('#next');
+const prev = document.querySelector('#prev');
+const auto = false; // Auto scroll
+const intervalTime = 5000;
+let slideInterval;
+
+const nextSlide = () => {
+  // Get current class
+  const current = document.querySelector('.current');
+  // Remove current class
+  current.classList.remove('current');
+  // Check for next slide
+  if (current.nextElementSibling) {
+    // Add current to next sibling
+    current.nextElementSibling.classList.add('current');
+  } else {
+    // Add current to start
+    slides[0].classList.add('current');
+  }
+  setTimeout(() => current.classList.remove('current'));
+};
+
+const prevSlide = () => {
+  // Get current class
+  const current = document.querySelector('.current');
+  // Remove current class
+  current.classList.remove('current');
+  // Check for prev slide
+  if (current.previousElementSibling) {
+    // Add current to prev sibling
+    current.previousElementSibling.classList.add('current');
+  } else {
+    // Add current to last
+    slides[slides.length - 1].classList.add('current');
+  }
+  setTimeout(() => current.classList.remove('current'));
+};
+
+// Button events
+next.addEventListener('click', e => {
+  nextSlide();
+  if (auto) {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, intervalTime);
+  }
+});
+
+prev.addEventListener('click', e => {
+  prevSlide();
+  if (auto) {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, intervalTime);
+  }
+});
+
+// Auto slide
+if (auto) {
+  // Run next slide at interval time
+  slideInterval = setInterval(nextSlide, intervalTime);
+}
+    
+const zoomElement = document.querySelector(".zoom");
+let zoom = 1;
+const ZOOM_SPEED = 0.1;
+
+document.addEventListener("wheel", function(e) {  
+    
+    if(e.deltaY > 0){    
+        zoomElement.style.transform = `scale(${zoom += ZOOM_SPEED})`;  
+    }else{    
+        zoomElement.style.transform = `scale(${zoom -= ZOOM_SPEED})`;  }
+
+
+});
+
+</script>
+    
+</body>
+</html>
